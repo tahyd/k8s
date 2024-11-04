@@ -1,0 +1,14 @@
+package com.ems.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
+public class Employee {
+	
+	private int eid;
+	private String name;
+	private double salary;
+
+}

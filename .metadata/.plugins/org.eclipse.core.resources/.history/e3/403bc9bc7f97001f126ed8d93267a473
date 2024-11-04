@@ -1,0 +1,27 @@
+package com.ems.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.ems.entities.Employee;
+import com.ems.repository.EmployeeRepository;
+import com.emsexceptions.EmployeeNotFoundException;
+
+public class EmployeeService implements IEmployeeService  {
+
+	@Autowired
+	 private EmployeeRepository repository;
+	@Override
+	public List<Employee> getEmployees() {
+		
+		return repository.findAll();
+	}
+
+	@Override
+	public Employee getEmployee(int id) throws EmployeeNotFoundException {
+		// TODO Auto-generated method stub
+		return repository.findById(id).orElseThrow(()->new EmployeeNotFoundException("Employee Not Found");
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.emsexceptions;
+
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+	
+	@ExceptionHandler(EmployeeNotFoundException.class)
+	public String handleEmployeeNotFoundException(EmployeeNotFoundException ex) {
+	
+		 return ex.getMessage();
+	}
+	
+
+}

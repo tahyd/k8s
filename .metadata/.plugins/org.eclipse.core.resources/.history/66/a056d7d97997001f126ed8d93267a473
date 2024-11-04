@@ -1,0 +1,6 @@
+spring.application.name=ems
+
+server.port=9090
+spring.datasource.url=mysql:jdbc://localgost:3306/ems_k8s
+spring.datasource.username=root
+spring.datasource.password=root

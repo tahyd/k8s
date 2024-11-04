@@ -1,0 +1,7 @@
+spring.application.name=ems
+
+server.port=9090
+spring.datasource.url=
+spring.datasource.name=
+spring.datasource.username=
+spring.datasource.password=
