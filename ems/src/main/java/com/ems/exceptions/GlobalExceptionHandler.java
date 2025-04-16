@@ -12,6 +12,12 @@ public class GlobalExceptionHandler {
 		System.out.println("X");
 		 return ex.getMessage();
 	}
-	
+
+	@ExceptionHandler(DuplicateEmployeeException.class)
+	public String handleDuplicateEmployeeException(DuplicateEmployeeException ex) {
+
+
+		return ex.getMessage();
+	}
 
 }

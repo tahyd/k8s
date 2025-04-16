@@ -3,6 +3,7 @@ package com.ems.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.ems.exceptions.DuplicateEmployeeException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +33,16 @@ public class EmployeeService implements IEmployeeService  {
 		 * if(emplOptional.isPresent()) { return emplOptional.get(); }else { throw new
 		 * EmployeeNotFoundException("Employee not found "); }
 		 */
+	}
+
+	@Override
+	public Employee createNewEmployee(Employee employee) throws DuplicateEmployeeException {
+		Optional<Employee> e =  repository.findById(employee.getEid());
+
+		   if(!e.isEmpty()){
+			  throw  new DuplicateEmployeeException(("Duplicate Employee")) ;
+		   }
+		return repository.save(employee);
 	}
 
 }

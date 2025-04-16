@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class Employee {
 	@Id
 	@Column(name="eid")
-	@GeneratedValue
+	//@GeneratedValue
 	private int eid;
 	@Column(name="name")
 	private String name;
